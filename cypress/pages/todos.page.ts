@@ -69,6 +69,7 @@ class TodosPage {
   get selectAllButton() {
     return cy.get('[id="toggle-all"]');
   }
+
   // Functions
   // Opening a page by URL
   openPage(): void {
@@ -195,6 +196,10 @@ class TodosPage {
       });
   }
 
+  checkRecordInListByIndex(value: string, index: number): void {
+    this.toDoEntriesList.should('exist').find('li').eq(index).find('label').should('contain.text', value);
+  }
+
   removeCompletedRecords() {
     this.clearCompletedButton.should('exist').click();
   }
@@ -223,6 +228,35 @@ class TodosPage {
 
   markAllTasksCompleted() {
     this.selectAllButton.should('exist').click({ force: true });
+  }
+
+  changeValueByIndex(additionRecord: string, index: number) {
+    this.toDoEntriesList.should('exist').then(() => {
+      cy.get('li[class="todo"]')
+        .eq(index)
+        .dblclick()
+        .type(additionRecord + '{enter}');
+    });
+  }
+
+  deleteEntryByIndex(index: number) {
+    this.toDoEntriesList.should('exist').then(() => {
+      cy.get('li[class="todo"]').eq(index).find('button[class="destroy"]').click({ force: true });
+    });
+  }
+
+  checkRecordIsNotInToDoList(listOfToDoEntries: string[], index: number) {
+    this.toDoEntriesList
+      .should('exist')
+      .find('li')
+      .each(line => {
+        cy.wrap(line).within(() => {
+          cy.get('div[class="view"]')
+            .should('exist')
+            .find('label')
+            .should('not.contain.text', listOfToDoEntries[index]);
+        });
+      });
   }
 }
 

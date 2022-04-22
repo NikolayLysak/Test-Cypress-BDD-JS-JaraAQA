@@ -26,12 +26,6 @@ Then('I click on "Clear completed" button', () => {
   TodosPage.removeCompletedRecords();
 });
 
-And('I check that ony active records stay in ToDo list', () => {
-  cy.task('log', 'I check that ony active records stay in ToDo list');
-  cy.allure().step('I check that ony active records stay in ToDo list', true);
-  TodosPage.checkRecordsAttributes(returnRecotrdStatus('active'));
-});
-
 And('I check counter value equal active records quantity', () => {
 	cy.task('log', 'I check counter value equal active records quantity');
 	cy.allure().step('I check counter value equal active records quantity', true);
@@ -48,4 +42,16 @@ And('I check that all records are completed', () => {
   cy.task('log', 'I check that all records are completed');
   cy.allure().step('I check that all records are completed', true);
   TodosPage.checkRecordsAttributes(returnRecotrdStatus('complete'));
+})
+
+And('I check that all records are active', () => {
+  cy.task('log', 'I check that all records are active');
+  cy.allure().step('I check that all records are active', true);
+  TodosPage.checkRecordsAttributes(returnRecotrdStatus('active'));
+})
+
+Then('I deleted one of entries with index {string}', (index: string) => {
+  cy.task('log', 'I deleted one of entries');
+  cy.allure().step('I deleted one of entries', true);
+  TodosPage.deleteEntryByIndex(parseInt(index));
 })

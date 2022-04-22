@@ -10,5 +10,5 @@ Feature: Todos page functional testing
 		Then I mark some checkboxes
 		Then I select filter "All"
 		Then I click on "Clear completed" button
-		And I check that ony active records stay in ToDo list
+		And I check that all records are active
 

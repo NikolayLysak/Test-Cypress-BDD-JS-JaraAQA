@@ -9,3 +9,5 @@ Feature: Todos page functional testing
 		Then I make todo entries
 		Then I mark all checkboxes via "Select All" button
 		And I check that all records are completed
+		Then I mark all checkboxes via "Select All" button
+		And I check that all records are active
