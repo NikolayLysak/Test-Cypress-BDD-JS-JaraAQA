@@ -176,8 +176,16 @@ class TodosPage {
   }
 
   setFilter(filter: string) {
-    this.filters.should('exist').contains('a', filter).should('exist').click({force: true});
-    cy.wait(5000)
+    this.filters.should('exist').contains('a', filter).should('exist').click({ force: true });
+  }
+
+  checkRecordsList(list: string[]) {
+    this.toDoEntriesList
+      .should('exist')
+      .find('li')
+      .each((entry, index) => {
+        cy.wrap(entry).find('label').should('contain.text', list[index]);
+      });
   }
 }
 
