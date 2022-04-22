@@ -63,7 +63,11 @@ class TodosPage {
   }
 
   get clearCompletedButton() {
-    return cy.get('button[class="clear-completed"]')
+    return cy.get('button[class="clear-completed"]');
+  }
+
+  get selectAllButton() {
+    return cy.get('[id="toggle-all"]');
   }
   // Functions
   // Opening a page by URL
@@ -198,23 +202,27 @@ class TodosPage {
   checkRecordsAttributes(value: string) {
     this.toDoEntriesList
       .should('exist')
-      .find('li').each((entry) => {
-      cy.wrap(entry).invoke('attr', 'class')
-        .then( className => {
-          expect(`${className}`).to.equal(value);
+      .find('li')
+      .each(entry => {
+        cy.wrap(entry)
+          .invoke('attr', 'class')
+          .then(className => {
+            expect(`${className}`).to.equal(value);
+          });
+      });
+  }
+
+  checkCounterValue() {
+    this.toDoEntriesList.should('exist').then(() => {
+      cy.get('li[class="todo"]').then(li => {
+        let count = li.length;
+        this.todoCounter.should('exist').should('contain.text', `${count} items left`);
       });
     });
   }
 
-  checkCounterValue() {
-    this.toDoEntriesList
-      .should('exist')
-      .then(() => {
-        cy.get('li[class="todo"]').then(li=>{
-          let count = li.length;
-          this.todoCounter.should('exist').should('contain.text', `${count} items left`)
-        })
-    })
+  markAllTasksCompleted() {
+    this.selectAllButton.should('exist').click({ force: true });
   }
 }
 

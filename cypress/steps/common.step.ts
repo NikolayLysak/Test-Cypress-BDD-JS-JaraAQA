@@ -37,3 +37,15 @@ And('I check counter value equal active records quantity', () => {
 	cy.allure().step('I check counter value equal active records quantity', true);
 	TodosPage.checkCounterValue();
 });
+
+Then('I mark all checkboxes via "Select All" button', () => {
+  cy.task('log', 'I mark all checkboxes via "Select All" button');
+  cy.allure().step('I mark all checkboxes via "Select All" button', true);
+  TodosPage.markAllTasksCompleted();
+})
+
+And('I check that all records are completed', () => {
+  cy.task('log', 'I check that all records are completed');
+  cy.allure().step('I check that all records are completed', true);
+  TodosPage.checkRecordsAttributes(returnRecotrdStatus('complete'));
+})
