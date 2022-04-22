@@ -2,7 +2,6 @@ const cypressTypeScriptPreprocessor = require('./cy-ts-preprocessor');
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 const moment = require('moment');
 
-
 module.exports = (on, config) => {
   on('file:preprocessor', cypressTypeScriptPreprocessor);
 
@@ -13,5 +12,5 @@ module.exports = (on, config) => {
     }
   });
 
-allureWriter(on, config);
+  allureWriter(on, config);
 };
