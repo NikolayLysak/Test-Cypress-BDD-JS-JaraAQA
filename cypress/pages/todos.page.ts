@@ -50,7 +50,7 @@ class TodosPage {
     return cy.get('footer > em');
   }
 
-  get todoCounters() {
+  get todoCounter() {
     return cy.get('span[class="todo-count"]');
   }
 
@@ -149,7 +149,7 @@ class TodosPage {
       .should('exist')
       .should('have.class', 'todo');
 
-    this.todoCounters.should('exist').should('contain.text', `${count} items left`);
+    this.todoCounter.should('exist').should('contain.text', `${count} items left`);
   }
 
   markCheckBoxChecked(lineIndex: number = 0) {
@@ -163,7 +163,7 @@ class TodosPage {
       .eq(lineIndex)
       .should('exist')
       .should('have.class', 'todo completed');
-    this.todoCounters.should('exist').should('contain.text', `0 items left`);
+    this.todoCounter.should('exist').should('contain.text', `0 items left`);
   }
 
   inputToDoValues(list: string[]) {
@@ -204,6 +204,17 @@ class TodosPage {
           expect(`${className}`).to.equal(value);
       });
     });
+  }
+
+  checkCounterValue() {
+    this.toDoEntriesList
+      .should('exist')
+      .then(() => {
+        cy.get('li[class="todo"]').then(li=>{
+          let count = li.length;
+          this.todoCounter.should('exist').should('contain.text', `${count} items left`)
+        })
+    })
   }
 }
 
