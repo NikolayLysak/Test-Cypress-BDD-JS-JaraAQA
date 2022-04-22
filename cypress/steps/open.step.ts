@@ -1,6 +1,6 @@
 import {And, Given, Then} from 'cypress-cucumber-preprocessor/steps';
 import TodosPage from '../pages/todos.page';
-// import {returnRecotrdStatus} from "../support/helpers";
+import {returnRecotrdStatus} from "../support/helpers";
 
 Given('I open Todos page', () => {
   cy.allure().step('I open Todos page', true);
