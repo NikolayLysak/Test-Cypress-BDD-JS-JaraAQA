@@ -154,7 +154,7 @@ class TodosPage {
       .should('exist')
       .should('have.class', 'todo');
 
-    this.todoCounter.should('exist').should('contain.text', `${count} items left`);
+    this.todoCounter.should('exist').should('contain.text', `${count} item left`);
   }
 
   markCheckBoxChecked(lineIndex: number = 0) {
