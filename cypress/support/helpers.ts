@@ -27,11 +27,22 @@ function communityListLinks() {
   return ['http://twitter.com/vuejs', 'https://gitter.im/yyx990803/vue', 'https://github.com/vuejs/Discussion/issues'];
 }
 
+function returnRecotrdStatus(value: string) {
+  switch (value) {
+    case 'active':
+      return 'todo';
+    case 'complete':
+      return 'todo completed';
+    default:
+      return 'statud unknown';
+  }
+}
 export {
   getLeftSideBlockDesc,
   communityListLinks,
   resourcesListLinks,
   resourcesList,
   communityList,
-  getLeftFrameFooterText
+  getLeftFrameFooterText,
+  returnRecotrdStatus
 };

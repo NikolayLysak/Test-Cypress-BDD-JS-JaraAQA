@@ -62,6 +62,9 @@ class TodosPage {
     return cy.get('ul[class="filters"]');
   }
 
+  get clearCompletedButton() {
+    return cy.get('button[class="clear-completed"]')
+  }
   // Functions
   // Opening a page by URL
   openPage(): void {
@@ -186,6 +189,21 @@ class TodosPage {
       .each((entry, index) => {
         cy.wrap(entry).find('label').should('contain.text', list[index]);
       });
+  }
+
+  removeCompletedRecords() {
+    this.clearCompletedButton.should('exist').click();
+  }
+
+  checkRecordsAttributes(value: string) {
+    this.toDoEntriesList
+      .should('exist')
+      .find('li').each((entry) => {
+      cy.wrap(entry).invoke('attr', 'class')
+        .then( className => {
+          expect(`${className}`).to.equal(value);
+      });
+    });
   }
 }
 

@@ -2,7 +2,7 @@ Feature: Todos page functional testing
 
 	@subSuite("TODOS")
 
-	@AS_ID("TestCase 003")
+	@AS_ID("TestCase 004")
 
 	Scenario: Filter check all/active/completed
 		Given I open Todos page
