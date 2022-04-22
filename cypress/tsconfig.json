@@ -1,6 +1,7 @@
 {
     "extends": "../tsconfig.json",
     "include": [
+        "../node_modules/@shelex/cypress-allure-plugin/reporter",
         "../node_modules/cypress",
         "*/*.ts",
         "*/*/*.ts"
