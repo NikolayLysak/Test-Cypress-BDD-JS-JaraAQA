@@ -1,33 +1,28 @@
 import { And, Then } from 'cypress-cucumber-preprocessor/steps';
 import TodosPage from '../../pages/todos.page';
-import testData from '../../fixtures/todos-004/testData';
+import { listOfActiveRecords, listOfDodeRecords, listOfToDoEntries } from '../../fixtures/todos-004/testData';
 
 Then('I make todo entries', () => {
   cy.task('log', 'I make todo entries');
-  cy.allure().step('I make todo entries', true);
-  TodosPage.inputToDoValues(testData.listOfToDoEntries);
+  TodosPage.inputToDoValues(listOfToDoEntries);
 });
 
 Then('I mark some checkboxes', () => {
   cy.task('log', 'I mark some checkboxes');
-  cy.allure().step('I mark some checkboxes', true);
-  TodosPage.markCheckBoxesByEntryText(testData.listOfDodeRecords);
+  TodosPage.markCheckBoxesByEntryText(listOfDodeRecords);
 });
 
 And('I check that only active entries are present', () => {
   cy.task('log', 'I check that only active entries are present');
-  cy.allure().step('I check that only active entries are present', true);
-  TodosPage.checkRecordsList(testData.listOfActiveRecords);
+  TodosPage.checkRecordsList(listOfActiveRecords);
 });
 
 And('I check that only completed entries are present', () => {
   cy.task('log', 'I check that only completed entries are present');
-  cy.allure().step('I check that only completed entries are present', true);
-  TodosPage.checkRecordsList(testData.listOfDodeRecords);
+  TodosPage.checkRecordsList(listOfDodeRecords);
 });
 
 And('I check that all entries are present', () => {
   cy.task('log', 'I check that all entries are present');
-  cy.allure().step('I check that all entries are present', true);
-  TodosPage.checkRecordsList(testData.listOfToDoEntries);
+  TodosPage.checkRecordsList(listOfToDoEntries);
 });
