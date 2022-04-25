@@ -69,7 +69,7 @@ class TodosPage {
   }
 
   openPage(): void {
-    cy.visit(`${Cypress.env('PORTAL_URL')}`);
+    cy.visit(`${Cypress.env('PORTAL_URL')}`, {timeout: 30000});
   }
 
   checkTitle(title: string) {

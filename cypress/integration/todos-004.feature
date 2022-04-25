@@ -6,7 +6,7 @@ Feature: Todos page functional testing
 
 	Scenario: Filter check all/active/completed
 		Given I open Todos page
-		Then I make todo entries
+		Then I make ToDo entries
 		Then I mark some checkboxes
 		Then I select filter "Active"
 		And I check that only active entries are present

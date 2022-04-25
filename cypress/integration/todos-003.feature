@@ -6,6 +6,6 @@ Feature: Todos page functional testing
 
 	Scenario: Checking the checkbox
 		Given I open Todos page
-		Then I make todo entry
+		Then I make ToDo entry
 		Then I mark the checkbox
 		And I check that todo entry is done
