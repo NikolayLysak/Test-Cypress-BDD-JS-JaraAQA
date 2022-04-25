@@ -14,3 +14,4 @@ module.exports = (on, config) => {
 
   allureWriter(on, config);
 };
+
