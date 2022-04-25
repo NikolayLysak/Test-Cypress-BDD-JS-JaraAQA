@@ -6,7 +6,7 @@ Feature: Todos page functional testing
 
 	Scenario: Checking if an entry can be deleted
 		Given I open Todos page
-		Then I make todo entries
+		Then I make ToDo entries
 		Then I deleted one of entries with index "0"
 		And I check that deleted entry with index "0" not contains in ToDo list
 

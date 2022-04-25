@@ -6,7 +6,7 @@ Feature: Todos page functional testing
 
 	Scenario: Checking the operation of the counter of open tasks
 		Given I open Todos page
-		Then I make todo entries
+		Then I make ToDo entries
 		And I check counter value equal active records quantity
 		Then I mark some checkboxes
 		And I check counter value equal active records quantity

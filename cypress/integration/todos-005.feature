@@ -6,7 +6,7 @@ Feature: Todos page functional testing
 
 	Scenario: Checking for cleanup of completed tasks
 		Given I open Todos page
-		Then I make todo entries
+		Then I make ToDo entries
 		Then I mark some checkboxes
 		Then I select filter "All"
 		Then I click on "Clear completed" button

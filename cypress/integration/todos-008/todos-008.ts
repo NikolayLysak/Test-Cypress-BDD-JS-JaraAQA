@@ -2,7 +2,7 @@ import { And, Then } from 'cypress-cucumber-preprocessor/steps';
 import TodosPage from '../../pages/todos.page';
 import testData, { additionRecord, listOfToDoEntries } from '../../fixtures/todos-008/testData';
 
-Then('I make todo entries', () => {
+Then('I make ToDo entries', () => {
   cy.task('log', 'I make todo entries');
   TodosPage.inputToDoValues(listOfToDoEntries);
 });
