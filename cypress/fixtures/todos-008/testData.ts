@@ -6,11 +6,11 @@ const listOfToDoEntries: string[] = [
   'Fourth ToDo record',
   'Fifth ToDo record'
 ];
+export { additionRecord, listOfToDoEntries };
 
 class TestData {
   recordIndex: number = 0;
   newRecord: string = `${listOfToDoEntries[this.recordIndex]}${additionRecord}`;
 }
-export default new TestData();
 
-export { additionRecord, listOfToDoEntries };
+export default new TestData();
