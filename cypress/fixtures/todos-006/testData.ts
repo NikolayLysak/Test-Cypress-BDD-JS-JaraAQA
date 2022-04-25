@@ -1,24 +1,11 @@
-class TestData {
-	get listOfDodeRecords(): string[] {
-		return this._listOfDodeRecords;
-	}
+const listOfToDoEntries: string[] = [
+	'First ToDo record',
+	'Second ToDo record',
+	'Third ToDo record',
+	'Fourth ToDo record',
+	'Fifth ToDo record'
+];
 
-	get listOfToDoEntries(): string[] {
-		return this._listOfToDoEntries;
-	}
+const listOfDodeRecords: string[] = ['First ToDo record', 'Second ToDo record'];
 
-	private _listOfToDoEntries: string[] = [
-		'First ToDo record',
-		'Second ToDo record',
-		'Third ToDo record',
-		'Fourth ToDo record',
-		'Fifth ToDo record'
-	]
-
-	private _listOfDodeRecords: string[] = [
-		'First ToDo record',
-		'Second ToDo record'
-	]
-
-}
-export default new TestData();
+export { listOfToDoEntries, listOfDodeRecords };
