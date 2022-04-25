@@ -1,15 +1,13 @@
-import {Then} from 'cypress-cucumber-preprocessor/steps';
+import { Then } from 'cypress-cucumber-preprocessor/steps';
 import TodosPage from '../../pages/todos.page';
-import testData from '../../fixtures/todos-005/testData';
+import { listOfDodeRecords, listOfToDoEntries } from '../../fixtures/todos-005/testData';
 
 Then('I make todo entries', () => {
-	cy.task('log', 'I make todo entries');
-	cy.allure().step('I make todo entries', true);
-	TodosPage.inputToDoValues(testData.listOfToDoEntries);
+  cy.task('log', 'I make todo entries');
+  TodosPage.inputToDoValues(listOfToDoEntries);
 });
 
 Then('I mark some checkboxes', () => {
-	cy.task('log', 'I mark some checkboxes');
-	cy.allure().step('I mark some checkboxes', true);
-	TodosPage.markCheckBoxesByEntryText(testData.listOfDodeRecords);
+  cy.task('log', 'I mark some checkboxes');
+  TodosPage.markCheckBoxesByEntryText(listOfDodeRecords);
 });

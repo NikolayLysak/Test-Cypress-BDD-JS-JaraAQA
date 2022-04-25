@@ -1,5 +1,4 @@
 {
-  "testFiles": "**/*.feature",
   "viewportWidth": 1360,
   "viewportHeight": 768,
   "env": {

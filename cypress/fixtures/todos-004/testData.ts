@@ -1,15 +1,5 @@
-class TestData {
-	get listOfDodeRecords(): string[] {
-		return this._listOfDodeRecords;
-	}
-	get listOfActiveRecords(): string[] {
-		return this._listOfActiveRecords;
-	}
-	get listOfToDoEntries(): string[] {
-		return this._listOfToDoEntries;
-	}
 
-	private _listOfToDoEntries: string[] = [
+	 const listOfToDoEntries: string[] = [
 		'First ToDo record',
 		'Second ToDo record',
 		'Third ToDo record',
@@ -17,15 +7,15 @@ class TestData {
 		'Fifth ToDo record'
 	]
 
-	private _listOfDodeRecords: string[] = [
+	const listOfDodeRecords: string[] = [
 		'First ToDo record',
 		'Second ToDo record'
 	]
 
-	private _listOfActiveRecords: string[] = [
+	const listOfActiveRecords: string[] = [
 		'Third ToDo record',
 		'Fourth ToDo record',
 		'Fifth ToDo record'
 	]
-}
-export default new TestData();
+
+	 export {listOfToDoEntries, listOfActiveRecords, listOfDodeRecords}
